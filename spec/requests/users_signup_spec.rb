@@ -1,14 +1,5 @@
 require 'rails_helper'
 RSpec.describe "Users signup", type: :request do
-
-  def is_logged_in?
-    !session[:user_id].nil?
-  end
-
-  def log_in_as(user)
-    session[:user_id] = user.id
-  end
-
   example "valid signup information with account activation" do
     get signup_path
     expect{
