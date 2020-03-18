@@ -4,6 +4,8 @@ FactoryBot.define do
     sequence(:email) { |n| "user#{n}@example.com" }
     password "foobar" 
     password_confirmation "foobar"
+    activated true
+    activated_at Time.zone.now
 
     trait :michael do
       name "Michael Example"
@@ -18,7 +20,8 @@ FactoryBot.define do
     trait :archer do
       name "Sterling Archer"
       sequence(:email) { |n| "duchess#{n}@example.gov" }
-      password_digest User.digest('password')
+      password "foobar" 
+      password_confirmation "foobar"
       activated true
       activated_at Time.zone.now 
     end
@@ -26,7 +29,8 @@ FactoryBot.define do
     trait :lana do
       name "Lana Kane"
       sequence(:email) { |n| "hands#{n}@example.gov"}
-      password_digest User.digest('password')
+      password "foobar" 
+      password_confirmation "foobar"
       activated true
       activated_at Time.zone.now
     end
