@@ -62,6 +62,7 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.include IntegrationHelpers, type: :request
+  config.include ControllerHelpers, type: :controller
 end
 
 Shoulda::Matchers.configure do |config| 

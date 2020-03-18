@@ -4,10 +4,6 @@ RSpec.describe UsersController, type: :controller do
   let!(:user) { FactoryBot.create(:user) }
   let(:other_user) { FactoryBot.create(:user, :archer) }
 
-  def log_in_as(user)
-    session[:user_id] = user.id
-  end
-
   it "should redirect index when not logged in" do
     get :index
     expect(response).to redirect_to login_url 
