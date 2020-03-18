@@ -4,9 +4,9 @@ RSpec.describe "Users signup", type: :request do
     get signup_path
     expect{
       post users_path, params: { user: { name:  "Example User",
-        email: "user@example.com",
-        password:              "password",
-        password_confirmation: "password" } }
+                                 email: "user@example.com",
+                                 password:              "password",
+                                 password_confirmation: "password" } }
     }.to change(User, :count).by(1)
 
     assert_equal 1, ActionMailer::Base.deliveries.size
@@ -14,7 +14,7 @@ RSpec.describe "Users signup", type: :request do
     expect(user.activated?).to be false
     # 有効化していない状態でログインしてみる
     log_in_as(user)
-    expect(is_logged_in?).to be true
+    expect(is_logged_in?).to be false
     # 有効化トークンが不正な場合
     get edit_account_activation_path("invalid token", email: user.email)
     expect(is_logged_in?).to be false

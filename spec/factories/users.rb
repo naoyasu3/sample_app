@@ -8,7 +8,8 @@ FactoryBot.define do
     trait :michael do
       name "Michael Example"
       sequence(:email) { |n| "michael#{n}@example.com" }
-      password_digest User.digest('password')
+      password "foobar" 
+      password_confirmation "foobar"
       admin true
       activated true
       activated_at Time.zone.now
