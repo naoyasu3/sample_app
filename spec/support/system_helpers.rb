@@ -13,4 +13,11 @@ module SystemHelpers
       expect(page).to have_content 'Account'
     end
   end
+
+  def not_log_in_as?
+    within '.navbar-nav' do
+      expect(page).to have_content 'Log in'
+      expect(page).to_not have_content 'Account'
+    end
+  end
 end
