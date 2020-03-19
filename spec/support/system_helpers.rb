@@ -6,4 +6,11 @@ module SystemHelpers
     fill_in "Password", with: user.password
     click_button "Log in"
   end
+
+  def log_in_as?
+    within '.navbar-nav' do
+      expect(page).to_not have_content 'Log in'
+      expect(page).to have_content 'Account'
+    end
+  end
 end
