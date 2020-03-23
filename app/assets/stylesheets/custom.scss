@@ -259,7 +259,6 @@ input {
   }
   .content {
     display: block;
-    margin-left: 60px;
     img {
       display: block;
       padding: 5px 0;
@@ -268,11 +267,10 @@ input {
   .timestamp {
     color: $gray-light;
     display: block;
-    margin-left: 60px;
   }
   .gravatar {
     float: left;
-    margin-right: 10px;
+    margin-right: 5px;
     margin-top: 5px;
   }
 }
@@ -288,5 +286,36 @@ span.picture {
   margin-top: 10px;
   input {
     border: 0;
+  }
+}
+//comment
+.container {
+  margin-top: 25px;
+  .main-comment {
+    img {
+      margin: 0 15px 20px 10px;
+    }
+    textarea{
+      height: 90px;
+      width: 90%;
+    }
+    input {
+      width: 90%;
+    }
+  }
+  .box {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #2c2c2c;
+    background: #FFF;
+    border: solid 3px #282829;
+    border-radius: 10px;
+    .content{
+      margin: 10px 0px;
+    }
+    .timestamp{
+      opacity: 60%;
+    }
   }
 }
