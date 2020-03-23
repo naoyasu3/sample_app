@@ -4,6 +4,10 @@ RSpec.describe "UsersIndexSpec", type: :request do
   let!(:admin) { FactoryBot.create(:user, :michael) }
   let!(:non_admin) { FactoryBot.create(:user, :archer) }
 
+  before do
+    FactoryBot.create_list(:user, 30)
+  end
+
   it "index as admin including pagination and delete links" do
     log_in_as(admin)
     expect(response).to redirect_to user_path(admin)
