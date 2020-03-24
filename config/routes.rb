@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   #Controller: params[:id]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:show, :create, :destroy] do
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :destroy]
   end
   resources :relationships, only: [:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
