@@ -1,9 +1,9 @@
-<h1>Chat room</h1>
+<h1><%= @room.name %></h1>
 
-<div id="messages">
+<div id="messages" data-room_id = "<%= @room.id %>">
   <%= render @messages %>
 </div>
 <form>
-  <label>Say something:</label><br>
-  <input type="text" data-behavior="room_speaker" id="chat_input" user_id="<%= current_user.id %>" room_id="<%= @room.id %>" >
+  <input type="text" data-behavior="room_speaker" id="chat_input" user_id="<%= current_user.id %>" room_id="<%= @room.id %>" 
+    placeholder= " #<%= @room.name %> へのメッセージ" >
 </form>
