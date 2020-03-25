@@ -1,0 +1,9 @@
+<h1>Chat room</h1>
+
+<div id="messages">
+  <%= render @messages %>
+</div>
+<form>
+  <label>Say something:</label><br>
+  <input type="text" data-behavior="room_speaker" id="chat_input" user_id="<%= current_user.id %>" room_id="<%= @room.id %>" >
+</form>
