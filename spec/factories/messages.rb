@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :message do
-    content "MyText"
-    association user
-    association room
+    sequence(:content) { |n| "message#{n}" } 
+    association :user
+    association :room
   end
 end
